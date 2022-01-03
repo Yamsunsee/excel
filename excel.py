@@ -1,10 +1,12 @@
+import sys
 import math
 import random
 import openpyxl
+import os
 
-MAIN_PATH = "C:\\Users\\Admin\\Desktop\\Python"
-IMPORT_FILE_NAME = "data"
-EXPORT_FILE_NAME = "result"
+
+MAIN_PATH = os.path.abspath(os.getcwd())
+IMPORT_FILE_NAME, EXPORT_FILE_NAME = sys.argv[1:]
 
 
 def shuffle(data):
@@ -34,7 +36,6 @@ def exportFile(data):
 
 
 def main(path):
-    # Import file
     workbook = openpyxl.load_workbook(path + f"\\{IMPORT_FILE_NAME}.xlsx")
     sheet = workbook.active
     max_row = sheet.max_row
@@ -52,12 +53,8 @@ def main(path):
 
         result += [row]
 
-    # Shuffle file
     shuffle(result)
-
-    # Export file
     exportFile(result)
-
     return "Done!"
 
 
