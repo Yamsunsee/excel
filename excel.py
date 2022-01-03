@@ -1,8 +1,8 @@
+import os
 import sys
 import math
 import random
 import openpyxl
-import os
 
 
 MAIN_PATH = os.path.abspath(os.getcwd())
