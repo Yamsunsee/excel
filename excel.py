@@ -55,7 +55,7 @@ def main(path):
     # Shuffle file
     shuffle(result)
 
-    # # Export file
+    # Export file
     exportFile(result)
 
     return "Done!"
